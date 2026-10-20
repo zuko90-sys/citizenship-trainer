@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>მოქალაქეობა · Тренажёр на гражданство Грузии</title>
+<meta name="theme-color" content="#0b5c46" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d3f31" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<meta name="description" content="Тренажёр экзамена на гражданство Грузии: 600 вопросов, офлайн, без рекламы и сбора данных.">
+<link rel="stylesheet" href="./styles.css?v=3.8.0">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-text">
+      <!-- словомарка: буква მ из иконки — первая буква слова მოქალაქეობა («гражданство») -->
+      <span class="wordmark" lang="ka" role="img" aria-label="მოქალაქეობა"><span class="mark" aria-hidden="true">მ</span><span aria-hidden="true">ოქალაქეობა</span></span>
+      <span id="brandSub">Тренажёр на гражданство</span>
+    </div>
+  </div>
+  <div class="topbar-actions">
+    <button id="streakBtn" class="chip" type="button" aria-label="Серия дней подряд — открыть статистику" data-aria-ru="Серия дней подряд — открыть статистику"><span class="ico" aria-hidden="true" data-icon="flame"></span><span id="streakVal">0</span></button>
+    <button id="themeBtn" class="icon-btn" type="button" aria-label="Сменить тему" data-aria-ru="Сменить тему" data-icon="contrast"></button>
+  </div>
+</header>
+
+<main id="view" class="view"></main>
+<!-- всплывающие подсказки живут в своём landmark'е -->
+<div id="toasts" role="region" aria-label="Уведомления" data-aria-ru="Уведомления"></div>
+<!-- сюда уходят короткие объявления для скринридера: вердикт, остаток времени -->
+<div id="sr" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<!-- role="tablist" на самом nav лишил бы его роли навигационного landmark —
+     поэтому список вкладок лежит внутри отдельным элементом -->
+<nav class="tabbar" aria-label="Разделы приложения" data-aria-ru="Разделы приложения">
+  <div class="tabs" role="tablist">
+  <button class="tab" data-nav="home" type="button"><span class="ico" aria-hidden="true" data-icon="home"></span><span class="lbl" data-ru="Обзор">Обзор</span></button>
+  <button class="tab" data-nav="study" type="button"><span class="ico" aria-hidden="true" data-icon="pencil"></span><span class="lbl" data-ru="Учить">Учить</span></button>
+  <button class="tab" data-nav="exam" type="button"><span class="ico" aria-hidden="true" data-icon="timer"></span><span class="lbl" data-ru="Экзамен">Экзамен</span></button>
+  <button class="tab" data-nav="materials" type="button"><span class="ico" aria-hidden="true" data-icon="library"></span><span class="lbl" data-ru="Материалы">Материалы</span></button>
+  <button class="tab" data-nav="settings" type="button"><span class="ico" aria-hidden="true" data-icon="settings"></span><span class="lbl" data-ru="Настройки">Настройки</span></button>
+  </div>
+</nav>
+
+<!-- Версия в адресе не даёт WebView отдать закешированные скрипты от прошлой
+     сборки после обновления приложения. Подставляется из package.json
+     командой npm run version:sync (она же зовётся перед cap sync). -->
+<script src="./data/questions.js?v=3.8.0"></script>
+<script src="./data/rules.js?v=3.8.0"></script>
+<script src="./data/timeline.js?v=3.8.0"></script>
+<script src="./domain.js?v=3.8.0"></script>
+<script src="./i18n.js?v=3.8.0"></script>
+<script src="./app.js?v=3.8.0"></script>
+</body>
+</html>

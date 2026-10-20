@@ -1,0 +1,11 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>migration</title>
+<script>
+  // Одноразовый мост миграции: v2.2 грузилась с file://, и весь прогресс остался
+  // в localStorage этого origin — из Capacitor (https://localhost) он невидим.
+  // MigrationActivity открывает эту страницу на старом origin, а мы отдаём ей JSON.
+  var payload = '';
+  try { payload = localStorage.getItem('geo-citizenship-trainer-v1') || ''; } catch (e) {}
+  try { LegacyBridge.done(payload); } catch (e) {}
+</script>
