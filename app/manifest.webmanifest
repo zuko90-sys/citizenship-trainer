@@ -1,0 +1,17 @@
+{
+  "name": "მოქალაქეობა — тренажёр на гражданство Грузии",
+  "short_name": "მოქალაქეობა",
+  "description": "600 вопросов экзамена на гражданство Грузии: история, язык, право. Офлайн, без рекламы и сбора данных.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f7f1",
+  "theme_color": "#0b5c46",
+  "lang": "ru",
+  "categories": ["education"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
